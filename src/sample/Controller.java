@@ -141,14 +141,19 @@ public class Controller {
     }
 
     private static String rSAC(String string, String type) {
-        char[] list = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+        char[] list = {
+                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
                 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '@', '#', '!', '$', '%',
-                '&', '-', '_', '=', '`', '~', '"', ',', '/', '|'};
+                '&', '-', '_', '=', '`', '~', '"', ',', '/', '|'
+        };
 
         string = string.toUpperCase();
         string = string.replaceAll("\\s+","");
 
-        String[] types = {"CM", "METER", "METERS", "KM", "MILES", "MILE", "INCHES", "FEET", "FOOT", "FT", "MILLIMETER", "MM", "M"};
+        String[] types = {
+                "CM", "METER", "METERS", "KM", "MILES", "MILE", "INCHES", "FEET", "FOOT", "FT", "MILLIMETER", "MM", "M"
+        };
+
         String what = "";
 
         for (String var : types) {

@@ -25,7 +25,7 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        primaryStage.setScene(new Scene(root, screenSize.getWidth()/2.2, (screenSize.getHeight()/2)));
+        primaryStage.setScene(new Scene(root, screenSize.getWidth()/1.25, (screenSize.getHeight()/1.25)));
 
         primaryStage.getIcons().add(new Image("sample/what.png"));
 
