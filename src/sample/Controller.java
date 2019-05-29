@@ -27,9 +27,6 @@ public class Controller {
     @FXML
     private TextField oppositeSide;
 
-    @FXML
-    private Text helpText;
-
     private void closeProgram() {
         boolean answer = ConfirmBox.display("Close Application", "Are you sure you want to quit? :(");
 
@@ -45,21 +42,17 @@ public class Controller {
 
     @FXML
     void showHelpText() {
-        if (helpText.isVisible()) {
-            helpText.setVisible(false);
-        } else {
-            helpText.setVisible(true);
-        helpText.setText("" +
-                "The program can convert the following:\n" +
+        String help = "" +
+                "The program can convert the following (not case-sensitive):\n" +
                 "Miles can be written as -> Miles or Mile\n" +
                 "Meters can be written as -> Meters, meter or m\n" +
                 "Millimeters can be written as -> Millimeter or mm\n" +
                 "Inches can be written as -> Inches or in\n" +
                 "Feet can be written as -> Foot, feet or ft\n" +
                 "If you have the measurements as km (for the distance) and cm (for the rest)\n" +
-                "It can be entered without the variables");
+                "It can be entered without the variables";
+        DialogBox.display("Help", help);
     }
-        }
 
 
     @FXML
@@ -84,7 +77,8 @@ public class Controller {
                 double calculatedCircumferenceWithGivenValues = Math.round(d * remainderOfCircle);
                 double change = Change(calculatedCircumferenceWithGivenValues, EARTH);
 
-                String right = "The angle for the First stick: " + angleOne + "°\n"
+                String right = ""
+                        + "The angle for the First stick: " + angleOne + "°\n"
                         + "The angle for the Second stick: " + angleTwo + "°\n"
                         + "The angle at which both meet: " + angleInBetween + "°\n"
                         + "Your calculated circumference: " + calculatedCircumferenceWithGivenValues + "Km\n\n"
@@ -92,11 +86,7 @@ public class Controller {
                         + "\nYou calculated " + calculatedCircumferenceWithGivenValues + " Km. "
                         + "\nYou were off by " + change + "%.\n";
 
-                PieChart.Data slice1 = new PieChart.Data("Distance measured " + angleInBetween + "°", angleInBetween);
-                PieChart.Data slice2 = new PieChart.Data("The rest " + (360-angleInBetween) + "°", 360-angleInBetween);
-
-                pie.getData().add(slice1);
-                pie.getData().add(slice2);
+                setupPie(angleInBetween);
 
                 if (change > 49.99) {
                     information.setText(right + "\noof");
@@ -118,6 +108,14 @@ public class Controller {
             errorText.setVisible(true);
             errorText.setText("Verify input information.");
         }
+    }
+
+    private void setupPie(double angle) {
+        pie.getData().clear();
+        PieChart.Data slice1 = new PieChart.Data("Distance measured " + angle + "°", angle);
+        PieChart.Data slice2 = new PieChart.Data("The rest " + (360-angle) + "°", 360-angle);
+        pie.getData().add(slice1);
+        pie.getData().add(slice2);
     }
 
     private void reset() {
