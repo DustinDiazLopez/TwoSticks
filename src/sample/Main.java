@@ -22,10 +22,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Two Sticks");
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        primaryStage.setScene(new Scene(root, screenSize.getWidth()/1.25, (screenSize.getHeight()/1.25)));
+        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        primaryStage.setScene(new Scene(root, 1080, 605));
 
         primaryStage.getIcons().add(new Image("sample/what.png"));
 
