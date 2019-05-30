@@ -88,8 +88,6 @@ public class Controller {
 
                 setupPie(angleInBetween);
 
-                System.err.print(Change(angleOne, angleTwo));
-
                 if (change > 79.99) {
                     information.setText(right + "\nBIG OOF");
                 } else if (change > 49.99) {
