@@ -88,8 +88,12 @@ public class Controller {
 
                 setupPie(angleInBetween);
 
-                if (change > 49.99) {
-                    information.setText(right + "\noof");
+                System.err.print(Change(angleOne, angleTwo));
+
+                if (change > 79.99) {
+                    information.setText(right + "\nBIG OOF");
+                } else if (change > 49.99) {
+                    information.setText(right + "\nOOF");
                 } else {
                     information.setText(right);
                 }
@@ -113,7 +117,7 @@ public class Controller {
     private void setupPie(double angle) {
         pie.getData().clear();
         PieChart.Data slice1 = new PieChart.Data("Distance measured " + angle + "°", angle);
-        PieChart.Data slice2 = new PieChart.Data("The rest " + (360-angle) + "°", 360-angle);
+        PieChart.Data slice2 = new PieChart.Data("The rest " + (360 - angle) + "°", (360 - angle));
         pie.getData().add(slice1);
         pie.getData().add(slice2);
     }
@@ -151,7 +155,8 @@ public class Controller {
         string = string.replaceAll("\\s+","");
 
         String[] types = {
-                "CM", "METER", "METERS", "KM", "MILES", "MILE", "INCHES", "FEET", "FOOT", "FT", "MILLIMETER", "MM", "M"
+                "CM", "MILLIMETER", "METER", "METERS", "KM", "MILES", "MILE", "INCHES",
+                "IN", "FEET", "FOOT", "FT", "MM", "M"
         };
 
         String what = "";
@@ -191,36 +196,49 @@ public class Controller {
             return value;
         }
 
-        if (from.equals("MILES") || from.equals("MILE")) {
-            if (to.equals("KM")) {
-                val *= 1.609;
-            } else if (to.equals("CM")) {
-                val *= 160934.4;
-            }
-        } else if (from.equals("METER") || from.equals("METERS") || from.equals("M")) {
-            if (to.equals("KM")) {
-                val /= 1000;
-            } else if (to.equals("CM")) {
-                val *= 100;
-            }
-        } else if (from.equals("MM") || from.equals("MILLIMETER")) {
-            if (to.equals("KM")) {
-                val /= 1e+6;
-            } else if (to.equals("CM")) {
-                val /= 10;
-            }
-        } else if (from.equals("INCHES") || from.equals("IN")) {
-            if (to.equals("KM")) {
-                val /= 39370.079;
-            } else if (to.equals("CM")) {
-                val *= 2.54;
-            }
-        } else if (from.equals("FEET") || from.equals("FOOT") || from.equals("FT")) {
-            if (to.equals("KM")) {
-                val /= 3280.84;
-            } else if (to.equals("CM")) {
-                val *= 30.48;
-            }
+        switch (from) {
+            case "MILES":
+            case "MILE":
+                if (to.equals("KM")) {
+                    val *= 1.609;
+                } else if (to.equals("CM")) {
+                    val *= 160934.4;
+                }
+                break;
+            case "METER":
+            case "METERS":
+            case "M":
+                if (to.equals("KM")) {
+                    val /= 1000;
+                } else if (to.equals("CM")) {
+                    val *= 100;
+                }
+                break;
+            case "MM":
+            case "MILLIMETER":
+                if (to.equals("KM")) {
+                    val /= 1e+6;
+                } else if (to.equals("CM")) {
+                    val /= 10;
+                }
+                break;
+            case "INCHES":
+            case "IN":
+                if (to.equals("KM")) {
+                    val /= 39370.079;
+                } else if (to.equals("CM")) {
+                    val *= 2.54;
+                }
+                break;
+            case "FEET":
+            case "FOOT":
+            case "FT":
+                if (to.equals("KM")) {
+                    val /= 3280.84;
+                } else if (to.equals("CM")) {
+                    val *= 30.48;
+                }
+                break;
         }
         return String.valueOf(val);
     }
