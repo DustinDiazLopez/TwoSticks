@@ -14,7 +14,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="605.0" minWidth="1080.0" prefHeight="605.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="605.0" minWidth="1080.0" prefHeight="605.0" prefWidth="1080.0" stylesheets="/css/dark-theme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <left>
       <VBox fx:id="inputContainer" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -78,7 +78,7 @@
       </VBox>
    </center>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar stylesheets="@../css/dark-theme.css" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -94,6 +94,6 @@
       </MenuBar>
    </top>
    <bottom>
-      <Text fx:id="information" strokeType="OUTSIDE" strokeWidth="0.0" BorderPane.alignment="CENTER" />
+      <Text fx:id="information" fill="#f5f5f5" strokeType="OUTSIDE" strokeWidth="0.0" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

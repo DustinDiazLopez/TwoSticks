@@ -5,9 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
+    static String THEME = "/css/dark-theme.css";
 
     private void closeProgram() {
         boolean answer = ConfirmBox.display("Close Application", "Are you sure you want to quit? :(");
@@ -23,7 +26,9 @@ public class Main extends Application {
         primaryStage.setTitle("Two Sticks");
 
         //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        primaryStage.setScene(new Scene(root, 1080, 605));
+        Scene scene = new Scene(root, 1080, 605);
+        primaryStage.setScene(scene);
+
 
         primaryStage.getIcons().add(new Image("sample/what.png"));
 

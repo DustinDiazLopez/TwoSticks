@@ -2,8 +2,12 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+
+import java.awt.event.KeyEvent;
+import java.security.Key;
 
 public class Controller {
     @FXML
@@ -51,9 +55,9 @@ public class Controller {
                 "Feet can be written as -> Foot, feet or ft\n" +
                 "If you have the measurements as km (for the distance) and cm (for the rest)\n" +
                 "It can be entered without the variables";
+
         DialogBox.display("Help", help);
     }
-
 
     @FXML
     void cute() {
@@ -95,6 +99,7 @@ public class Controller {
                 } else {
                     information.setText(right);
                 }
+
 
             } else {
                 reset();

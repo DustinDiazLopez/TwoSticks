@@ -45,6 +45,7 @@ class DialogBox {
         layout.setPadding(new Insets(10,10,10,10));
 
         Scene scene = new Scene(layout);
+        scene.getStylesheets().add(Main.THEME);
         window.setScene(scene);
         window.showAndWait();
     }

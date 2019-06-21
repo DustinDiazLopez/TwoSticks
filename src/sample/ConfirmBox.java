@@ -63,8 +63,10 @@ class ConfirmBox {
         layout.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(layout);
+        scene.getStylesheets().add(Main.THEME);
         window.setScene(scene);
         window.showAndWait();
+
 
         return answer;
     }
