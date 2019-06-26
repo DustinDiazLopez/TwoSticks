@@ -1,7 +1,7 @@
 # The Two Sticks Application
 Application utilizing [JavaFX](https://en.wikipedia.org/wiki/JavaFX) that calculates the circumference of the earth with 4 given values.
 Inspired by [Kurtis Baute](https://www.youtube.com/channel/UCTRM8LE1g6UXrVZKwgw5oEA) 
-with his [video](https://www.youtube.com/watch?v=YaPa4esJJx4)!
+with his [YouTube video](https://www.youtube.com/watch?v=YaPa4esJJx4)!
 
 ## What I learned
 
