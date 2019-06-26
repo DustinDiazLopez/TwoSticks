@@ -1,4 +1,4 @@
-package sample;
+package TwoSticksInator;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
