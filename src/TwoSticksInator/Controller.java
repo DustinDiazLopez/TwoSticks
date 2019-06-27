@@ -1,7 +1,9 @@
 package TwoSticksInator;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
@@ -26,6 +28,29 @@ public class Controller {
 
     @FXML
     private TextField oppositeSide;
+
+    @FXML
+    private Button submit;
+
+    public void initialize() {
+        distance.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) cute();
+        });
+        stickOneAdjacent.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) cute();
+        });
+        stickTwoAdjacent.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) cute();
+        });
+        oppositeSide.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) cute();
+        });
+        submit.setOnKeyPressed(e -> {
+            if (e.getCode().toString().equals("ENTER")) cute();
+        });
+        Platform.setImplicitExit(false);
+
+    }
 
     private void closeProgram() {
         boolean answer = ConfirmBox.display("Close Application", "Are you sure you want to quit? :(");
