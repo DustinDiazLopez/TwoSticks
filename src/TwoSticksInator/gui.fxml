@@ -5,9 +5,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="605.0" minWidth="1080.0" prefHeight="605.0"
-            prefWidth="1080.0" stylesheets="/css/dark-theme.css" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="TwoSticksInator.Controller">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="605.0"
+            minWidth="1080.0" prefHeight="605.0" prefWidth="1080.0" stylesheets="/css/dark-theme.css"
+            xmlns="http://javafx.com/javafx/8" fx:controller="TwoSticksInator.Controller">
    <left>
       <VBox fx:id="inputContainer" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -65,7 +65,7 @@
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <Text fx:id="errorText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+             <Text fx:id="errorText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false"/>
             <PieChart fx:id="pie" prefHeight="444.0" prefWidth="810.0" />
          </children>
       </VBox>
