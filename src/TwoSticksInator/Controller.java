@@ -80,62 +80,8 @@ public class Controller {
         DialogBox.display("Help", help);
     }
 
-    @FXML
-    void cute() {
-        reset();
-        pie.setVisible(true);
-        information.setVisible(true);
-        errorText.setVisible(false);
-
-        try {
-            double d = Double.parseDouble(rSAC(distance.getText(), "KM"));
-            double stickOneOpposite = Double.parseDouble(rSAC(oppositeSide.getText(), "CM"));
-            double stickOneAdjacent_ = Double.parseDouble(rSAC(stickOneAdjacent.getText(), "CM"));
-            double stickTwoAdjacent_ = Double.parseDouble(rSAC(stickTwoAdjacent.getText(), "CM"));
-
-            if (stickOneAdjacent_ != stickTwoAdjacent_) {
-                int EARTH = 40075;
-                double angleOne = tenth(TanInverse(stickOneOpposite, stickOneAdjacent_));
-                double angleTwo = tenth(TanInverse(stickOneOpposite, stickTwoAdjacent_));
-                double angleInBetween = Math.round((Math.abs(angleOne - angleTwo)) * 10) / 10.0;
-                double remainderOfCircle = (360 / angleInBetween);
-                double calculatedCircumferenceWithGivenValues = Math.round(d * remainderOfCircle);
-                double change = Change(calculatedCircumferenceWithGivenValues, EARTH);
-
-                String right = ""
-                        + "The angle for the First stick: " + angleOne + "°\n"
-                        + "The angle for the Second stick: " + angleTwo + "°\n"
-                        + "The angle at which both meet: " + angleInBetween + "°\n"
-                        + "Your calculated circumference: " + calculatedCircumferenceWithGivenValues + "Km\n\n"
-                        + "The circumference of planet EARTH is " + EARTH + " Km. "
-                        + "\nYou calculated " + calculatedCircumferenceWithGivenValues + " Km. "
-                        + "\nYou were off by " + change + "%.\n";
-
-                setupPie(angleInBetween);
-
-                if (change > 79.99) {
-                    information.setText(right + "\nBIG OOF");
-                } else if (change > 49.99) {
-                    information.setText(right + "\nOOF");
-                } else {
-                    information.setText(right);
-                }
-
-
-            } else {
-                reset();
-                pie.setVisible(false);
-                information.setVisible(false);
-                errorText.setVisible(true);
-                errorText.setText("No curvature... FLAT EARTH! D:");
-            }
-        } catch (Exception ignored) {
-            reset();
-            pie.setVisible(false);
-            information.setVisible(false);
-            errorText.setVisible(true);
-            errorText.setText("Verify input information.");
-        }
+    private static double round(double value, double place) {
+        return Math.round(value * place) / place;
     }
 
     private void setupPie(double angle) {
@@ -153,22 +99,18 @@ public class Controller {
     }
 
     private static double Change(double newNumber, double oldNumber) {
-        return Math.abs(Math.round((((newNumber - oldNumber) / oldNumber)*100) * 100) / 100.0);
+        return Math.abs(Math.round((((newNumber - oldNumber) / oldNumber) * 100) * 100) / 100.0);
     }
 
     private static double TanInverse(double opposite, double adjacent) {
-        return ToDegrees(Math.atan(opposite/adjacent));
+        return ToDegrees(Math.atan(opposite / adjacent));
     }
 
     private static double ToDegrees(double value) {
-        return value*(180/Math.PI);
+        return value * (180 / Math.PI);
     }
 
-    private static double tenth(double value) {
-        return Math.round(value * 10) / 10.0;
-    }
-
-    private static String rSAC(String string, String type) {
+    private static double rSAC(String string, String convertTo) {
         char[] list = {
                 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
                 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '@', '#', '!', '$', '%',
@@ -176,7 +118,7 @@ public class Controller {
         };
 
         string = string.toUpperCase();
-        string = string.replaceAll("\\s+","");
+        string = string.replaceAll("\\s+", "");
 
         String[] types = {
                 "CM", "MILLIMETER", "METER", "METERS", "KM", "MILES", "MILE", "INCHES",
@@ -193,7 +135,7 @@ public class Controller {
         }
 
         if (what.equals("")) {
-            what = type;
+            what = convertTo;
         }
 
         if (string.contains(".")) {
@@ -201,15 +143,73 @@ public class Controller {
                 string = string.replaceAll(String.valueOf(character), "");
             }
 
-            string = convert(string, what, type);
+            string = convert(string, what, convertTo);
 
-            return string;
+            return Double.parseDouble(string);
         } else {
             string = string.replaceAll("\\D", "");
 
-            string = convert(string, what, type);
+            string = convert(string, what, convertTo);
 
-            return string;
+            return Double.parseDouble(string);
+        }
+    }
+
+    @FXML
+    void cute() {
+        reset();
+        pie.setVisible(true);
+        information.setVisible(true);
+        errorText.setVisible(false);
+
+        try {
+            double d = rSAC(distance.getText(), "KM");
+            double stickOneOpposite = rSAC(oppositeSide.getText(), "CM");
+            double stickOneAdjacent_ = rSAC(stickOneAdjacent.getText(), "CM");
+            double stickTwoAdjacent_ = rSAC(stickTwoAdjacent.getText(), "CM");
+
+            if (stickOneAdjacent_ != stickTwoAdjacent_) {
+                int EARTH = 40075;
+                double angleOne = round(TanInverse(stickOneOpposite, stickOneAdjacent_), 10.0);
+                double angleTwo = round(TanInverse(stickOneOpposite, stickTwoAdjacent_), 10.0);
+                double angleInBetween = Math.round((Math.abs(angleOne - angleTwo)) * 10) / 10.0;
+                double remainderOfCircle = (360 / angleInBetween);
+                double calculatedCircumferenceWithGivenValues = Math.round(d * remainderOfCircle);
+                double change = Change(calculatedCircumferenceWithGivenValues, EARTH);
+
+                String computations = ""
+                        + "The angle for the First stick: " + angleOne + "°\n"
+                        + "The angle for the Second stick: " + angleTwo + "°\n"
+                        + "The angle at which both meet: " + angleInBetween + "°\n"
+                        + "Your calculated circumference: " + calculatedCircumferenceWithGivenValues + "Km\n\n"
+                        + "The circumference of planet EARTH is " + EARTH + " Km. "
+                        + "\nYou calculated " + calculatedCircumferenceWithGivenValues + " Km. "
+                        + "\nYou were off by " + change + "%.\n";
+
+                setupPie(angleInBetween);
+
+                if (change > 79.99) {
+                    information.setText(computations + "\nBIG OOF");
+                } else if (change > 49.99) {
+                    information.setText(computations + "\nOOF");
+                } else {
+                    information.setText(computations);
+                }
+
+
+            } else {
+                reset();
+                pie.setVisible(false);
+                information.setVisible(false);
+                errorText.setVisible(true);
+                errorText.setText("No curvature... FLAT EARTH! D:");
+            }
+        } catch (Exception ignored) {
+            reset();
+            pie.setVisible(false);
+            information.setVisible(false);
+            errorText.setVisible(true);
+            errorText.setText("Verify input information.");
         }
     }
 
