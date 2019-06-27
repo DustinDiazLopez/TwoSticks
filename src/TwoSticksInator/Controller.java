@@ -80,8 +80,8 @@ public class Controller {
         DialogBox.display("Help", help);
     }
 
-    private static double round(double value, double place) {
-        return Math.round(value * place) / place;
+    private static double round(double value) {
+        return Math.round(value * 10.0) / 10.0;
     }
 
     private void setupPie(double angle) {
@@ -170,8 +170,8 @@ public class Controller {
 
             if (stickOneAdjacent_ != stickTwoAdjacent_) {
                 int EARTH = 40075;
-                double angleOne = round(TanInverse(stickOneOpposite, stickOneAdjacent_), 10.0);
-                double angleTwo = round(TanInverse(stickOneOpposite, stickTwoAdjacent_), 10.0);
+                double angleOne = round(TanInverse(stickOneOpposite, stickOneAdjacent_));
+                double angleTwo = round(TanInverse(stickOneOpposite, stickTwoAdjacent_));
                 double angleInBetween = Math.round((Math.abs(angleOne - angleTwo)) * 10) / 10.0;
                 double remainderOfCircle = (360 / angleInBetween);
                 double calculatedCircumferenceWithGivenValues = Math.round(d * remainderOfCircle);
