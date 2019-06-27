@@ -28,9 +28,7 @@ public class Main extends Application {
     private static void setScreen() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-
         int w = screenSize.width;
-        int h = screenSize.height;
 
         if (w >= 3440) {
             w /= 3;
