@@ -25,14 +25,9 @@ public class Main extends Application {
         }
     }
 
-    private static int scaleBetween(int unscaledNum, int minAllowed, int maxAllowed, int min, int max) {
-        return (maxAllowed - minAllowed) * (unscaledNum - min) / (max - min) + minAllowed;
-    }
-
     private static void setScreen() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-        int maxRange = Math.max(minWIDTH, screenSize.width / 2);
 
         int w = screenSize.width;
         int h = screenSize.height;
@@ -55,7 +50,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("gui.fxml"));
-        primaryStage.setTitle("Two Sticks");
+        primaryStage.setTitle("The Two Sticks Inator");
         setScreen();
 
         Scene scene = new Scene(root, WIDTH, HEIGHT);
