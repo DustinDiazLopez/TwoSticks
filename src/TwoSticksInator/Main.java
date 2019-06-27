@@ -50,9 +50,6 @@ public class Main extends Application {
 
         WIDTH = w;
         HEIGHT = minHEIGHT;
-
-        System.out.println(maxRange + ": " + WIDTH + "x" + HEIGHT);
-
     }
 
     @Override
