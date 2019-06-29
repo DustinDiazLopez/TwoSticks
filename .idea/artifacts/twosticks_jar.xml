@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="twosticks:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/twosticks_jar</output-path>
+    <root id="archive" name="twosticks.jar">
+      <element id="module-output" name="twosticks" />
+    </root>
+  </artifact>
+</component>
