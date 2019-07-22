@@ -67,10 +67,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TwoSticksInator/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
+            <state relative-caret-position="612">
               <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -90,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TwoSticksInator/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+            <state relative-caret-position="462">
+              <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="143" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,17 +130,16 @@
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/css/dark-theme.css" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/TwoSticksInator/Controller.java" />
         <option value="$PROJECT_DIR$/src/TwoSticksInator/Main.java" />
+        <option value="$PROJECT_DIR$/src/TwoSticksInator/Controller.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="710" />
-    <option name="y" value="163" />
-    <option name="width" value="3024" />
-    <option name="height" value="1463" />
+    <option name="x" value="422" />
+    <option name="width" value="3025" />
+    <option name="height" value="1398" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -148,8 +147,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,24 +171,6 @@
               <item name="twosticks" type="b2602c69:ProjectViewProjectNode" />
               <item name="twosticks" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twosticks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twosticks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twosticks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twosticks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="twosticks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twosticks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="twosticks" type="b2602c69:ProjectViewProjectNode" />
@@ -522,10 +503,9 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="568" y="131" width="2419" height="1170" extended-state="0" />
-    <editor active="true" />
+    <frame x="338" y="0" width="2420" height="1118" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10936838" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.111914895" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -637,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TwoSticksInator/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="612">
           <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -656,8 +636,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TwoSticksInator/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+        <state relative-caret-position="462">
+          <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="143" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
